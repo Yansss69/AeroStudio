@@ -21,10 +21,11 @@ jobs:
 
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: '8.4'
 
-    # Otomatis buat gradlew di server GitHub
-    - name: Generate Gradle Wrapper
-      run: gradle wrapper
+    - name: Generate Gradle Wrapper 8.4
+      run: gradle wrapper --gradle-version 8.4
 
     - name: Beri izin eksekusi gradlew
       run: chmod +x gradlew
